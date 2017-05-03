@@ -20,12 +20,8 @@ namespace Crikkit__Minecraft_Server_CP_
             Server = server;
             Server.ControlPanel = this;
 
-            ServerBackgroundWorker.DoWork += ServerBackgroundWorker_DoWork;
-        }
-
-        private void ServerBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            Server.Run();
+            ServerBackgroundWorker.DoWork += (sender, e) =>
+                Server.Run(); 
         }
 
         private void imageButton_NewServer_Click(object sender, EventArgs e)
