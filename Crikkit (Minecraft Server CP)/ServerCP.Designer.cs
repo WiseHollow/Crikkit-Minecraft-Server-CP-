@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TextBoxConsoleOutput = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TextBoxConsoleOutput
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(0, 107);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(541, 101);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Console Output Window";
+            this.TextBoxConsoleOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.TextBoxConsoleOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxConsoleOutput.ForeColor = System.Drawing.Color.White;
+            this.TextBoxConsoleOutput.Location = new System.Drawing.Point(0, 107);
+            this.TextBoxConsoleOutput.Multiline = true;
+            this.TextBoxConsoleOutput.Name = "TextBoxConsoleOutput";
+            this.TextBoxConsoleOutput.Size = new System.Drawing.Size(541, 101);
+            this.TextBoxConsoleOutput.TabIndex = 2;
+            this.TextBoxConsoleOutput.Text = "Console Output Window";
             // 
             // panel1
             // 
@@ -70,6 +70,7 @@
             this.imageButton_NewServer.Size = new System.Drawing.Size(45, 45);
             this.imageButton_NewServer.TabIndex = 3;
             this.imageButton_NewServer.TabStop = false;
+            this.imageButton_NewServer.Click += new System.EventHandler(this.imageButton_NewServer_Click);
             // 
             // ServerCP
             // 
@@ -79,7 +80,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(541, 262);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TextBoxConsoleOutput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ServerCP";
             this.Text = "ServerCP";
@@ -92,7 +93,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TextBoxConsoleOutput;
         private System.Windows.Forms.Panel panel1;
         private ImageButton imageButton_NewServer;
     }

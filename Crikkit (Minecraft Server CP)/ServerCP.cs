@@ -12,9 +12,17 @@ namespace Crikkit__Minecraft_Server_CP_
 {
     public partial class ServerCP : Form
     {
-        public ServerCP()
+        private Server Server;
+
+        public ServerCP(Server server)
         {
             InitializeComponent();
+            Server = server;
+        }
+
+        private void imageButton_NewServer_Click(object sender, EventArgs e)
+        {
+            Server.Run();
         }
     }
 }

@@ -41,6 +41,13 @@ namespace Crikkit__Minecraft_Server_CP_
                     int.TryParse(item.SubItems[1].Text, out id);
                     Console.WriteLine("Clicked on server with id: " + id);
                     //TODO: Open Server Control Panel for server with appropriate id.
+
+                    Server server = Server.GetServer(id);
+                    if (server == null)
+                        return;
+
+                    ServerCP cp = new ServerCP(server);
+                    cp.Show();
                 }
             }
         }

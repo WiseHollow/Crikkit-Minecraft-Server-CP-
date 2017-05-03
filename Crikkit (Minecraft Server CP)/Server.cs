@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Crikkit__Minecraft_Server_CP_
 {
     public class Server
     {
         public static List<Server> Servers = new List<Server>();
+
+        public static Server GetServer(int id)
+        {
+            foreach (Server s in Servers)
+                if (s.ID == id)
+                    return s;
+            return null;
+        }
 
         public static int CreateNewServer(string name, uint memory)
         {
@@ -42,6 +46,8 @@ namespace Crikkit__Minecraft_Server_CP_
             }
         }
 
+        public List<string> consoleOutput = new List<string>();
+
         private Server(string name, uint memory)
         {
             ID = Servers.Count;
@@ -62,15 +68,42 @@ namespace Crikkit__Minecraft_Server_CP_
 
             if (!Directory.Exists(GetWorkingDirectory()))
                 Directory.CreateDirectory(GetWorkingDirectory());
-            string pathToJar = GetWorkingDirectory() + "\\spigot.jar";
+
+            string pathToJar = "\"" + Directory.GetCurrentDirectory() + "\\jars\\spigot.jar\"";
+            Console.WriteLine("Searching for jar in: " + pathToJar);
+            //if (!File.Exists(pathToJar))
+            //{
+            //    Console.WriteLine("Could not find jar file.");
+            //    return;
+            //}
 
             Process = new Process();
-            
+            Process.StartInfo.UseShellExecute = false;
+            Process.StartInfo.CreateNoWindow = true;
+            Process.StartInfo.RedirectStandardInput = true;
+            Process.StartInfo.RedirectStandardOutput = true;
+            Process.StartInfo.RedirectStandardError = true;
             Process.EnableRaisingEvents = false;
             Process.StartInfo.FileName = "java.exe";
-            Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + Directory.GetCurrentDirectory() + "\\jars\\spigot.jar";
+            Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + pathToJar;
             Process.StartInfo.WorkingDirectory = GetWorkingDirectory();
+
+            Process.OutputDataReceived += Process_OutputDataReceived;
+            Process.ErrorDataReceived += Process_OutputDataReceived;
+
             Process.Start();
+
+            Process.BeginOutputReadLine();
+            Process.BeginErrorReadLine();
+        }
+
+        private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (e.Data != null && e.Data != "")
+            {
+                consoleOutput.Add(e.Data);
+                Console.WriteLine("output: " + e.Data);
+            }
         }
     }
 }
