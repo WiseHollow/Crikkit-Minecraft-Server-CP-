@@ -72,18 +72,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Server.cs" />
-    <Compile Include="ServerIcon.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ServerIcon.Designer.cs">
-      <DependentUpon>ServerIcon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ServerListBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ServerListBox.Designer.cs">
-      <DependentUpon>ServerListBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="TextBoxWithWatermark.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -100,9 +88,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ServerIcon.resx">
-      <DependentUpon>ServerIcon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
