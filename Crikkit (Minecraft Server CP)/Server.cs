@@ -65,7 +65,7 @@ namespace Crikkit__Minecraft_Server_CP_
             Process = new Process();
             Process.EnableRaisingEvents = false;
             Process.StartInfo.FileName = "java.exe";
-            Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + pathToJar;
+            Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + Directory.GetCurrentDirectory() + "\\jars\\spigot.jar";
             Process.Start();
         }
     }
