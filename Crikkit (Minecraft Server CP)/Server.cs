@@ -60,12 +60,16 @@ namespace Crikkit__Minecraft_Server_CP_
             if (Process != null)
                 return;
 
+            if (!Directory.Exists(GetWorkingDirectory()))
+                Directory.CreateDirectory(GetWorkingDirectory());
             string pathToJar = GetWorkingDirectory() + "\\spigot.jar";
 
             Process = new Process();
+            
             Process.EnableRaisingEvents = false;
             Process.StartInfo.FileName = "java.exe";
             Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + Directory.GetCurrentDirectory() + "\\jars\\spigot.jar";
+            Process.StartInfo.WorkingDirectory = GetWorkingDirectory();
             Process.Start();
         }
     }
