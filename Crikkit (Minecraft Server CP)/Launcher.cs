@@ -17,10 +17,6 @@ namespace Crikkit__Minecraft_Server_CP_
         public void Populate()
         {
             ServerListView.Items.Clear();
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    ListViewItem item = ServerListView.Items.Add("Server " + i, 0);
-            //}
             foreach (Server s in Server.Servers)
             {
                 ServerListView.Items.Add(s.Name, 0);
