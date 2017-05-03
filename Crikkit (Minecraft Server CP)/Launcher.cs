@@ -8,14 +8,15 @@ namespace Crikkit__Minecraft_Server_CP_
         public Launcher()
         {
             InitializeComponent();
+            Populate();
+        }
 
-            PictureBox test = new PictureBox();
-            test.BackColor = System.Drawing.Color.White;
-            test.Width = 20;
-            test.Height = 20;
-            groupBox_Servers.Controls.Add(test);
-            groupBox_Servers.Controls.Add(test);
-            groupBox_Servers.Controls.Add(test);
+        private void Populate()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                ListViewItem item = ServerListView.Items.Add("Server " + i, 0);
+            }
         }
 
         private void imageButton_NewServer_Click(object sender, EventArgs e)

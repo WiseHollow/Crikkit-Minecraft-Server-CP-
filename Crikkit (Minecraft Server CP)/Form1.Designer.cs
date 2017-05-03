@@ -31,7 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox_Servers = new System.Windows.Forms.GroupBox();
+            this.ServerListView = new System.Windows.Forms.ListView();
+            this.ServerImageList = new System.Windows.Forms.ImageList(this.components);
             this.imageButton_Settings = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.panel1.SuspendLayout();
@@ -47,18 +48,31 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 426);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 51);
+            this.panel1.Size = new System.Drawing.Size(369, 51);
             this.panel1.TabIndex = 0;
             // 
-            // groupBox_Servers
+            // ServerListView
             // 
-            this.groupBox_Servers.ForeColor = System.Drawing.Color.White;
-            this.groupBox_Servers.Location = new System.Drawing.Point(12, 12);
-            this.groupBox_Servers.Name = "groupBox_Servers";
-            this.groupBox_Servers.Size = new System.Drawing.Size(260, 408);
-            this.groupBox_Servers.TabIndex = 1;
-            this.groupBox_Servers.TabStop = false;
-            this.groupBox_Servers.Text = "Server List";
+            this.ServerListView.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.ServerListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ServerListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ServerListView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ServerListView.ForeColor = System.Drawing.Color.White;
+            this.ServerListView.LargeImageList = this.ServerImageList;
+            this.ServerListView.Location = new System.Drawing.Point(12, 12);
+            this.ServerListView.MultiSelect = false;
+            this.ServerListView.Name = "ServerListView";
+            this.ServerListView.ShowGroups = false;
+            this.ServerListView.Size = new System.Drawing.Size(345, 408);
+            this.ServerListView.TabIndex = 1;
+            this.ServerListView.TileSize = new System.Drawing.Size(64, 64);
+            this.ServerListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // ServerImageList
+            // 
+            this.ServerImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ServerImageList.ImageStream")));
+            this.ServerImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ServerImageList.Images.SetKeyName(0, "ServerIcon_Grass.png");
             // 
             // imageButton_Settings
             // 
@@ -92,8 +106,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ClientSize = new System.Drawing.Size(284, 477);
-            this.Controls.Add(this.groupBox_Servers);
+            this.ClientSize = new System.Drawing.Size(369, 477);
+            this.Controls.Add(this.ServerListView);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Launcher";
@@ -111,7 +125,8 @@
         private System.Windows.Forms.Panel panel1;
         private ImageButton imageButton_NewServer;
         private ImageButton imageButton_Settings;
-        private System.Windows.Forms.GroupBox groupBox_Servers;
+        private System.Windows.Forms.ListView ServerListView;
+        private System.Windows.Forms.ImageList ServerImageList;
     }
 }
 

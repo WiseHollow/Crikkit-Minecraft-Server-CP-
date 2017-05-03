@@ -24,7 +24,8 @@ namespace Crikkit__Minecraft_Server_CP_
 
         public void Add(Server server)
         {
-
+            ServerIcon icon = new ServerIcon();
+            icon.Title.Text = server.Name;
         }
     }
 }
