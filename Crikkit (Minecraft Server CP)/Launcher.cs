@@ -19,7 +19,8 @@ namespace Crikkit__Minecraft_Server_CP_
             ServerListView.Items.Clear();
             foreach (Server s in Server.Servers)
             {
-                ServerListView.Items.Add(s.Name, 0);
+                ListViewItem item = ServerListView.Items.Add(s.Name, 0);
+                item.SubItems.Add("" + s.ID);
             }
         }
 
@@ -27,6 +28,21 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             NewServer ns = new NewServer();
             ns.Show();
+        }
+
+        private void ServerListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ServerListView.SelectedItems.Count > 0)
+            {
+                ListViewItem item = ServerListView.SelectedItems[0];
+                if (item != null)
+                {
+                    int id;
+                    int.TryParse(item.SubItems[1].Text, out id);
+                    Console.WriteLine("Clicked on server with id: " + id);
+                    //TODO: Open Server Control Panel for server with appropriate id.
+                }
+            }
         }
     }
 }

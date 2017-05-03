@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ServerListView = new System.Windows.Forms.ListView();
-            this.ServerImageList = new System.Windows.Forms.ImageList(this.components);
             this.imageButton_Settings = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
+            this.ServerListView = new System.Windows.Forms.ListView();
+            this.ServerImageList = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_Settings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).BeginInit();
@@ -50,29 +50,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(369, 51);
             this.panel1.TabIndex = 0;
-            // 
-            // ServerListView
-            // 
-            this.ServerListView.Alignment = System.Windows.Forms.ListViewAlignment.Default;
-            this.ServerListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ServerListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ServerListView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ServerListView.ForeColor = System.Drawing.Color.White;
-            this.ServerListView.LargeImageList = this.ServerImageList;
-            this.ServerListView.Location = new System.Drawing.Point(12, 12);
-            this.ServerListView.MultiSelect = false;
-            this.ServerListView.Name = "ServerListView";
-            this.ServerListView.ShowGroups = false;
-            this.ServerListView.Size = new System.Drawing.Size(345, 408);
-            this.ServerListView.TabIndex = 1;
-            this.ServerListView.TileSize = new System.Drawing.Size(64, 64);
-            this.ServerListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // ServerImageList
-            // 
-            this.ServerImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ServerImageList.ImageStream")));
-            this.ServerImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ServerImageList.Images.SetKeyName(0, "ServerIcon_Grass.png");
             // 
             // imageButton_Settings
             // 
@@ -100,6 +77,30 @@
             this.imageButton_NewServer.TabIndex = 2;
             this.imageButton_NewServer.TabStop = false;
             this.imageButton_NewServer.Click += new System.EventHandler(this.imageButton_NewServer_Click);
+            // 
+            // ServerListView
+            // 
+            this.ServerListView.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.ServerListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ServerListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ServerListView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ServerListView.ForeColor = System.Drawing.Color.White;
+            this.ServerListView.LargeImageList = this.ServerImageList;
+            this.ServerListView.Location = new System.Drawing.Point(12, 12);
+            this.ServerListView.MultiSelect = false;
+            this.ServerListView.Name = "ServerListView";
+            this.ServerListView.ShowGroups = false;
+            this.ServerListView.Size = new System.Drawing.Size(345, 408);
+            this.ServerListView.TabIndex = 1;
+            this.ServerListView.TileSize = new System.Drawing.Size(64, 64);
+            this.ServerListView.UseCompatibleStateImageBehavior = false;
+            this.ServerListView.SelectedIndexChanged += new System.EventHandler(this.ServerListView_SelectedIndexChanged);
+            // 
+            // ServerImageList
+            // 
+            this.ServerImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ServerImageList.ImageStream")));
+            this.ServerImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ServerImageList.Images.SetKeyName(0, "ServerIcon_Grass.png");
             // 
             // Launcher
             // 

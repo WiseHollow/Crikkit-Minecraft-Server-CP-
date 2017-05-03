@@ -24,7 +24,7 @@ namespace Crikkit__Minecraft_Server_CP_
         private static uint MemoryFloor = 64;
 
         private Process Process;
-        private int ID;
+        public int ID;
         public string Name
         {
             get;set;
