@@ -72,6 +72,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Server.cs" />
+    <Compile Include="ServerCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerCP.Designer.cs">
+      <DependentUpon>ServerCP.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextBoxWithWatermark.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -88,6 +94,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerCP.resx">
+      <DependentUpon>ServerCP.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,6 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ServerIcon_Grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Power_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Power_Pressed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

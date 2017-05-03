@@ -93,6 +93,36 @@ namespace Crikkit__Minecraft_Server_CP_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_Power {
+            get {
+                object obj = ResourceManager.GetObject("Button_Power", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Button_Power_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Button_Power_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Button_Power_Pressed {
+            get {
+                object obj = ResourceManager.GetObject("Button_Power_Pressed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_Settings {
             get {
                 object obj = ResourceManager.GetObject("Button_Settings", resourceCulture);
