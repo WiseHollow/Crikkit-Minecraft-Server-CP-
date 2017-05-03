@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Crikkit__Minecraft_Server_CP_
 {
@@ -46,7 +47,12 @@ namespace Crikkit__Minecraft_Server_CP_
             }
         }
 
-        public List<string> consoleOutput = new List<string>();
+        private ServerCP controlPanel;
+        public ServerCP ControlPanel
+        {
+            get { return controlPanel; }
+            set { controlPanel = value; }
+        }
 
         private Server(string name, uint memory)
         {
@@ -99,11 +105,19 @@ namespace Crikkit__Minecraft_Server_CP_
 
         private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
-            if (e.Data != null && e.Data != "")
+            if (ControlPanel != null)
             {
-                consoleOutput.Add(e.Data);
-                Console.WriteLine("output: " + e.Data);
+                object[] data = new object[2];
+                data[0] = ControlPanel.TextBoxConsoleOutput;
+                data[1] = e.Data;
+                ControlPanel.BeginInvoke(new MyDelegate(DelegateMethod), data);
             }
+        }
+
+        private delegate void MyDelegate(TextBox textBox, string output);
+        public void DelegateMethod(TextBox textBox, string output)
+        {
+            textBox.Text += output + Environment.NewLine;
         }
     }
 }

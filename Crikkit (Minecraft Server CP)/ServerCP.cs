@@ -18,6 +18,7 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             InitializeComponent();
             Server = server;
+            Server.ControlPanel = this;
         }
 
         private void imageButton_NewServer_Click(object sender, EventArgs e)

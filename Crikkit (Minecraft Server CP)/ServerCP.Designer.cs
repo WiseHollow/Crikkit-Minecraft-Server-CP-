@@ -44,6 +44,8 @@
             this.TextBoxConsoleOutput.Location = new System.Drawing.Point(0, 107);
             this.TextBoxConsoleOutput.Multiline = true;
             this.TextBoxConsoleOutput.Name = "TextBoxConsoleOutput";
+            this.TextBoxConsoleOutput.ReadOnly = true;
+            this.TextBoxConsoleOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextBoxConsoleOutput.Size = new System.Drawing.Size(541, 101);
             this.TextBoxConsoleOutput.TabIndex = 2;
             this.TextBoxConsoleOutput.Text = "Console Output Window";
@@ -92,9 +94,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TextBoxConsoleOutput;
         private System.Windows.Forms.Panel panel1;
         private ImageButton imageButton_NewServer;
+        public System.Windows.Forms.TextBox TextBoxConsoleOutput;
     }
 }
