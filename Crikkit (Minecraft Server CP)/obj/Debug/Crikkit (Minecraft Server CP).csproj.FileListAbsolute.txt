@@ -1,0 +1,10 @@
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\bin\Debug\Crikkit (Minecraft Server CP).exe.config
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit (Minecraft Server CP).csprojResolveAssemblyReference.cache
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\bin\Debug\Crikkit (Minecraft Server CP).exe
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\bin\Debug\Crikkit (Minecraft Server CP).pdb
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit__Minecraft_Server_CP_.Launcher.resources
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit__Minecraft_Server_CP_.NewServer.resources
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit__Minecraft_Server_CP_.Properties.Resources.resources
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit (Minecraft Server CP).csproj.GenerateResource.Cache
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit (Minecraft Server CP).exe
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit (Minecraft Server CP).pdb
