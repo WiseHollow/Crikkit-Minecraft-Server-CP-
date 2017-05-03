@@ -18,6 +18,7 @@ namespace Crikkit__Minecraft_Server_CP_
             Server.CreateNewServer(name, memory);
 
             //TODO: Refresh the list of servers in Launcher.
+            Launcher.Instance.Populate();
 
             Close();
         }

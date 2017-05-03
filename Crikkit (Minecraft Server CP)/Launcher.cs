@@ -5,17 +5,25 @@ namespace Crikkit__Minecraft_Server_CP_
 {
     public partial class Launcher : Form
     {
+        public static Launcher Instance;
+
         public Launcher()
         {
+            Instance = this;
             InitializeComponent();
             Populate();
         }
 
-        private void Populate()
+        public void Populate()
         {
-            for (int i = 0; i < 3; i++)
+            ServerListView.Items.Clear();
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    ListViewItem item = ServerListView.Items.Add("Server " + i, 0);
+            //}
+            foreach (Server s in Server.Servers)
             {
-                ListViewItem item = ServerListView.Items.Add("Server " + i, 0);
+                ServerListView.Items.Add(s.Name, 0);
             }
         }
 
