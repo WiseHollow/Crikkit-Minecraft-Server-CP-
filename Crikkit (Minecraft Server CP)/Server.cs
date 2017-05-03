@@ -70,7 +70,11 @@ namespace Crikkit__Minecraft_Server_CP_
         public void Run()
         {
             if (Process != null)
+            {
+                Process.Close();
+                Process = null;
                 return;
+            }
 
             if (!Directory.Exists(GetWorkingDirectory()))
                 Directory.CreateDirectory(GetWorkingDirectory());
