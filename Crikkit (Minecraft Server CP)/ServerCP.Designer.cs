@@ -32,6 +32,7 @@
             this.TextBoxConsoleOutput = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
+            this.ServerBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).BeginInit();
             this.SuspendLayout();
@@ -97,5 +98,6 @@
         private System.Windows.Forms.Panel panel1;
         private ImageButton imageButton_NewServer;
         public System.Windows.Forms.TextBox TextBoxConsoleOutput;
+        private System.ComponentModel.BackgroundWorker ServerBackgroundWorker;
     }
 }

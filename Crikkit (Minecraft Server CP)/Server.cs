@@ -101,6 +101,11 @@ namespace Crikkit__Minecraft_Server_CP_
 
             Process.BeginOutputReadLine();
             Process.BeginErrorReadLine();
+
+            Process.WaitForExit();
+            Console.WriteLine("Closed process");
+            Process.Close();
+            Process = null;
         }
 
         private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
