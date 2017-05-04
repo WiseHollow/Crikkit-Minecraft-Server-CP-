@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.button_Create = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBoxWithWatermark1 = new Crikkit__Minecraft_Server_CP_.TextBoxWithWatermark(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxWithWatermark1 = new Crikkit__Minecraft_Server_CP_.TextBoxWithWatermark(this.components);
+            this.comboBox_ServerJarType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,17 +78,6 @@
             0,
             0});
             // 
-            // textBoxWithWatermark1
-            // 
-            this.textBoxWithWatermark1.BackColor = System.Drawing.Color.White;
-            this.textBoxWithWatermark1.ForeColor = System.Drawing.Color.Gray;
-            this.textBoxWithWatermark1.Location = new System.Drawing.Point(3, 31);
-            this.textBoxWithWatermark1.Name = "textBoxWithWatermark1";
-            this.textBoxWithWatermark1.Size = new System.Drawing.Size(193, 20);
-            this.textBoxWithWatermark1.TabIndex = 1;
-            this.textBoxWithWatermark1.Text = "Server name";
-            this.textBoxWithWatermark1.Watermark = "Server name";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
@@ -101,6 +91,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.panel2.Controls.Add(this.comboBox_ServerJarType);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.textBoxWithWatermark1);
@@ -133,6 +124,27 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Memory (MB)";
             // 
+            // textBoxWithWatermark1
+            // 
+            this.textBoxWithWatermark1.BackColor = System.Drawing.Color.White;
+            this.textBoxWithWatermark1.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxWithWatermark1.Location = new System.Drawing.Point(3, 31);
+            this.textBoxWithWatermark1.Name = "textBoxWithWatermark1";
+            this.textBoxWithWatermark1.Size = new System.Drawing.Size(193, 20);
+            this.textBoxWithWatermark1.TabIndex = 1;
+            this.textBoxWithWatermark1.Text = "Server name";
+            this.textBoxWithWatermark1.Watermark = "Server name";
+            // 
+            // comboBox_ServerJarType
+            // 
+            this.comboBox_ServerJarType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_ServerJarType.FormattingEnabled = true;
+            this.comboBox_ServerJarType.Location = new System.Drawing.Point(3, 57);
+            this.comboBox_ServerJarType.Name = "comboBox_ServerJarType";
+            this.comboBox_ServerJarType.Size = new System.Drawing.Size(193, 21);
+            this.comboBox_ServerJarType.TabIndex = 5;
+            this.comboBox_ServerJarType.Text = "Server Jar Type";
+            // 
             // NewServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,5 +173,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox_ServerJarType;
     }
 }
