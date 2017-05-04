@@ -28,5 +28,11 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             ServerBackgroundWorker.RunWorkerAsync();
         }
+
+        private void ServerCP_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Server.ControlPanel == this)
+                Server.ControlPanel = null;
+        }
     }
 }

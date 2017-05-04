@@ -8,6 +8,7 @@ namespace Crikkit__Minecraft_Server_CP_
 {
     public class Server
     {
+        private static uint MemoryFloor = 64;
         public static List<Server> Servers = new List<Server>();
 
         public static Server GetServer(int id)
@@ -25,8 +26,6 @@ namespace Crikkit__Minecraft_Server_CP_
             Console.WriteLine("Server has been created with ID: " + server.ID);
             return server.ID;
         }
-
-        private static uint MemoryFloor = 64;
 
         private Process Process;
         public int ID;

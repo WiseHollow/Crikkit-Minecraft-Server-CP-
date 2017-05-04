@@ -81,9 +81,9 @@
             // 
             this.textBoxWithWatermark1.BackColor = System.Drawing.Color.White;
             this.textBoxWithWatermark1.ForeColor = System.Drawing.Color.Gray;
-            this.textBoxWithWatermark1.Location = new System.Drawing.Point(12, 76);
+            this.textBoxWithWatermark1.Location = new System.Drawing.Point(3, 31);
             this.textBoxWithWatermark1.Name = "textBoxWithWatermark1";
-            this.textBoxWithWatermark1.Size = new System.Drawing.Size(184, 20);
+            this.textBoxWithWatermark1.Size = new System.Drawing.Size(193, 20);
             this.textBoxWithWatermark1.TabIndex = 1;
             this.textBoxWithWatermark1.Text = "Server name";
             this.textBoxWithWatermark1.Watermark = "Server name";
@@ -95,7 +95,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 229);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 33);
+            this.panel1.Size = new System.Drawing.Size(201, 33);
             this.panel1.TabIndex = 3;
             // 
             // panel2
@@ -107,7 +107,7 @@
             this.panel2.Controls.Add(this.numericUpDown1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(208, 226);
+            this.panel2.Size = new System.Drawing.Size(200, 226);
             this.panel2.TabIndex = 4;
             // 
             // label2
@@ -138,12 +138,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ClientSize = new System.Drawing.Size(519, 262);
+            this.ClientSize = new System.Drawing.Size(201, 262);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NewServer";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "NewServer";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);

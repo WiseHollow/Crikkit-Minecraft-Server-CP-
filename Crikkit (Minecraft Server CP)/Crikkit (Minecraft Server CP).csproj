@@ -78,6 +78,7 @@
     <Compile Include="ServerCP.Designer.cs">
       <DependentUpon>ServerCP.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServerType.cs" />
     <Compile Include="TextBoxWithWatermark.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -27,7 +27,7 @@ namespace Crikkit__Minecraft_Server_CP_
         private void imageButton_NewServer_Click(object sender, EventArgs e)
         {
             NewServer ns = new NewServer();
-            ns.Show();
+            ns.ShowDialog();
         }
 
         private void ServerListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,10 +40,9 @@ namespace Crikkit__Minecraft_Server_CP_
                     int id;
                     int.TryParse(item.SubItems[1].Text, out id);
                     Console.WriteLine("Clicked on server with id: " + id);
-                    //TODO: Open Server Control Panel for server with appropriate id.
 
                     Server server = Server.GetServer(id);
-                    if (server == null)
+                    if (server == null || server.ControlPanel != null)
                         return;
 
                     ServerCP cp = new ServerCP(server);
