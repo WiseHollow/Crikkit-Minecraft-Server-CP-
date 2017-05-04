@@ -11,6 +11,7 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             Instance = this;
             InitializeComponent();
+            Server.LoadAllServers();
             Populate();
         }
 
@@ -49,6 +50,8 @@ namespace Crikkit__Minecraft_Server_CP_
                     cp.Show();
                 }
             }
+
+            ServerListView.SelectedItems.Clear();
         }
     }
 }

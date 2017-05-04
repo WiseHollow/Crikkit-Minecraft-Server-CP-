@@ -24,7 +24,33 @@ namespace Crikkit__Minecraft_Server_CP_
             Server server = new Server(name, memory, type);
             Servers.Add(server);
             Console.WriteLine("Server has been created with ID: " + server.ID);
+            server.SaveConfiguration();
             return server.ID;
+        }
+
+        public static void LoadAllServers()
+        {
+            string rootPath = Directory.GetCurrentDirectory() + "\\servers";
+            foreach (string dir in Directory.GetDirectories(rootPath))
+            {
+                if (!File.Exists(dir + "\\settings.dat"))
+                    continue;
+                string folderName = Path.GetFileName(Path.GetDirectoryName(dir + "\\settings.dat"));
+                int id = -1;
+                int.TryParse(folderName.Split(new string[] { "server" }, StringSplitOptions.None)[1], out id);
+
+                if (id == -1)
+                    continue;
+
+                StreamReader reader = new StreamReader(dir + "\\settings.dat");
+
+                string name = reader.ReadLine();
+                int memory = 1024;
+                int.TryParse(reader.ReadLine(), out memory);
+                ServerType type = (ServerType) Enum.Parse(typeof(ServerType), reader.ReadLine());
+
+                Servers.Add(new Server(name, (uint) memory, type));
+            }
         }
 
         private Process Process;
@@ -71,6 +97,18 @@ namespace Crikkit__Minecraft_Server_CP_
         public string GetWorkingDirectory()
         {
             return Directory.GetCurrentDirectory() + "\\servers\\server" + ID;
+        }
+
+        private void SaveConfiguration()
+        {
+            string path = GetWorkingDirectory() + "\\settings.dat";
+            if (File.Exists(path))
+                File.Delete(path);
+            StreamWriter writer = File.CreateText(path);
+            writer.WriteLine(Name);
+            writer.WriteLine(Memory);
+            writer.WriteLine(Type.ToString());
+            writer.Close();
         }
 
         public void Run()
