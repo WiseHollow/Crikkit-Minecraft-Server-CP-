@@ -35,5 +35,22 @@ namespace Crikkit__Minecraft_Server_CP_
             if (Server.ControlPanel == this)
                 Server.ControlPanel = null;
         }
+
+        private void textBox_ConsoleInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TextBox input = (TextBox)sender;
+                if (Server != null && Server.Process != null)
+                    SendCommand(input.Text);
+                input.Text = "";
+            }
+        }
+
+        private void SendCommand(string cmd)
+        {
+            Server.Process.StandardInput.WriteLine(cmd);
+
+        }
     }
 }

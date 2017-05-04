@@ -53,7 +53,7 @@ namespace Crikkit__Minecraft_Server_CP_
             }
         }
 
-        private Process Process;
+        public Process Process;
         public int ID;
         private ServerType type;
         public ServerType Type

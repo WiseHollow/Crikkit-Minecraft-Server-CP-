@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.TextBoxConsoleOutput = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.ServerBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.textBox_ConsoleInput = new System.Windows.Forms.TextBox();
+            this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).BeginInit();
             this.SuspendLayout();
@@ -42,14 +43,14 @@
             this.TextBoxConsoleOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.TextBoxConsoleOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxConsoleOutput.ForeColor = System.Drawing.Color.White;
-            this.TextBoxConsoleOutput.Location = new System.Drawing.Point(0, 107);
+            this.TextBoxConsoleOutput.Location = new System.Drawing.Point(0, -1);
             this.TextBoxConsoleOutput.Multiline = true;
             this.TextBoxConsoleOutput.Name = "TextBoxConsoleOutput";
             this.TextBoxConsoleOutput.ReadOnly = true;
             this.TextBoxConsoleOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBoxConsoleOutput.Size = new System.Drawing.Size(541, 101);
+            this.TextBoxConsoleOutput.Size = new System.Drawing.Size(541, 193);
             this.TextBoxConsoleOutput.TabIndex = 2;
-            this.TextBoxConsoleOutput.Text = "Console Output Window";
+            this.TextBoxConsoleOutput.TabStop = false;
             // 
             // panel1
             // 
@@ -60,6 +61,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(541, 51);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox_ConsoleInput
+            // 
+            this.textBox_ConsoleInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.textBox_ConsoleInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_ConsoleInput.ForeColor = System.Drawing.Color.White;
+            this.textBox_ConsoleInput.Location = new System.Drawing.Point(0, 191);
+            this.textBox_ConsoleInput.Name = "textBox_ConsoleInput";
+            this.textBox_ConsoleInput.Size = new System.Drawing.Size(541, 20);
+            this.textBox_ConsoleInput.TabIndex = 0;
+            this.textBox_ConsoleInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_ConsoleInput_KeyDown);
             // 
             // imageButton_NewServer
             // 
@@ -82,11 +94,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(541, 262);
+            this.Controls.Add(this.textBox_ConsoleInput);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TextBoxConsoleOutput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ServerCP";
-            this.Text = "ServerCP";
+            this.Text = "Server Control Panel";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ServerCP_FormClosed);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).EndInit();
@@ -100,5 +113,6 @@
         private ImageButton imageButton_NewServer;
         public System.Windows.Forms.TextBox TextBoxConsoleOutput;
         private System.ComponentModel.BackgroundWorker ServerBackgroundWorker;
+        private System.Windows.Forms.TextBox textBox_ConsoleInput;
     }
 }
