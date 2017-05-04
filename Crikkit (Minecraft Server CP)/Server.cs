@@ -115,8 +115,7 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             if (Process != null)
             {
-                Process.StandardInput.WriteLine("stop");
-                Process.Close();
+                Process.Kill();
                 Process = null;
                 return;
             }
@@ -124,7 +123,7 @@ namespace Crikkit__Minecraft_Server_CP_
             if (!Directory.Exists(GetWorkingDirectory()))
                 Directory.CreateDirectory(GetWorkingDirectory());
 
-            string pathToJar = "" + Directory.GetCurrentDirectory() + "\\jars\\" + type.ToString().ToLower() + ".jar";
+            string pathToJar = Directory.GetCurrentDirectory() + "\\jars\\" + type.ToString().ToLower() + ".jar";
             Console.WriteLine("Searching for jar in: " + pathToJar);
             if (!File.Exists(pathToJar))
             {
@@ -135,12 +134,12 @@ namespace Crikkit__Minecraft_Server_CP_
             Process = new Process();
             Process.StartInfo.UseShellExecute = false;
             Process.StartInfo.CreateNoWindow = true;
-            Process.StartInfo.RedirectStandardInput = true;
             Process.StartInfo.RedirectStandardOutput = true;
+            Process.StartInfo.RedirectStandardInput = true;
             Process.StartInfo.RedirectStandardError = true;
-            Process.EnableRaisingEvents = false;
+            Process.EnableRaisingEvents = true;
             Process.StartInfo.FileName = "java.exe";
-            Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + "\"" + pathToJar + "\"";
+            Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + "\"" + pathToJar + "\" -nojline";
             Process.StartInfo.WorkingDirectory = GetWorkingDirectory();
 
             Process.OutputDataReceived += Process_OutputDataReceived;
@@ -152,7 +151,7 @@ namespace Crikkit__Minecraft_Server_CP_
             Process.BeginErrorReadLine();
 
             Process.WaitForExit();
-            Console.WriteLine("Closed process");
+            Console.WriteLine("Server closed.");
             Process.Close();
             Process = null;
         }
