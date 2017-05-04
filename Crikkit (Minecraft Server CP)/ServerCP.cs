@@ -26,7 +26,8 @@ namespace Crikkit__Minecraft_Server_CP_
 
         private void imageButton_NewServer_Click(object sender, EventArgs e)
         {
-            ServerBackgroundWorker.RunWorkerAsync();
+            if (!ServerBackgroundWorker.IsBusy)
+                ServerBackgroundWorker.RunWorkerAsync();
         }
 
         private void ServerCP_FormClosed(object sender, FormClosedEventArgs e)

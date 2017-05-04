@@ -20,8 +20,9 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             string name = textBoxWithWatermark1.Text;
             uint memory = (uint) numericUpDown1.Value;
+            ServerType type = (ServerType)comboBox_ServerJarType.SelectedIndex;
 
-            Server.CreateNewServer(name, memory);
+            Server.CreateNewServer(name, memory, type);
             
             Launcher.Instance.Populate();
 

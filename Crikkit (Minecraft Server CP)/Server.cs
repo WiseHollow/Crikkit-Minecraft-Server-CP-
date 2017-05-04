@@ -19,9 +19,9 @@ namespace Crikkit__Minecraft_Server_CP_
             return null;
         }
 
-        public static int CreateNewServer(string name, uint memory)
+        public static int CreateNewServer(string name, uint memory, ServerType type)
         {
-            Server server = new Server(name, memory);
+            Server server = new Server(name, memory, type);
             Servers.Add(server);
             Console.WriteLine("Server has been created with ID: " + server.ID);
             return server.ID;
@@ -29,6 +29,12 @@ namespace Crikkit__Minecraft_Server_CP_
 
         private Process Process;
         public int ID;
+        private ServerType type;
+        public ServerType Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
         public string Name
         {
             get;set;
@@ -53,12 +59,13 @@ namespace Crikkit__Minecraft_Server_CP_
             set { controlPanel = value; }
         }
 
-        private Server(string name, uint memory)
+        private Server(string name, uint memory, ServerType type)
         {
             ID = Servers.Count;
             Process = null;
             Name = name;
             Memory = memory;
+            Type = type;
         }
 
         public string GetWorkingDirectory()
@@ -78,13 +85,13 @@ namespace Crikkit__Minecraft_Server_CP_
             if (!Directory.Exists(GetWorkingDirectory()))
                 Directory.CreateDirectory(GetWorkingDirectory());
 
-            string pathToJar = "\"" + Directory.GetCurrentDirectory() + "\\jars\\spigot.jar\"";
+            string pathToJar = "" + Directory.GetCurrentDirectory() + "\\jars\\" + type.ToString().ToLower() + ".jar";
             Console.WriteLine("Searching for jar in: " + pathToJar);
-            //if (!File.Exists(pathToJar))
-            //{
-            //    Console.WriteLine("Could not find jar file.");
-            //    return;
-            //}
+            if (!File.Exists(pathToJar))
+            {
+                Console.WriteLine("Could not find jar file.");
+                return;
+            }
 
             Process = new Process();
             Process.StartInfo.UseShellExecute = false;
@@ -94,7 +101,7 @@ namespace Crikkit__Minecraft_Server_CP_
             Process.StartInfo.RedirectStandardError = true;
             Process.EnableRaisingEvents = false;
             Process.StartInfo.FileName = "java.exe";
-            Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + pathToJar;
+            Process.StartInfo.Arguments = "-Xmx" + Memory + "M -jar " + "\"" + pathToJar + "\"";
             Process.StartInfo.WorkingDirectory = GetWorkingDirectory();
 
             Process.OutputDataReceived += Process_OutputDataReceived;
