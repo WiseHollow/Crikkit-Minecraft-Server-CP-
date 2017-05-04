@@ -115,6 +115,7 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             if (Process != null)
             {
+                Process.StandardInput.WriteLine("stop");
                 Process.Close();
                 Process = null;
                 return;
@@ -130,7 +131,7 @@ namespace Crikkit__Minecraft_Server_CP_
                 Console.WriteLine("Could not find jar file.");
                 return;
             }
-
+            
             Process = new Process();
             Process.StartInfo.UseShellExecute = false;
             Process.StartInfo.CreateNoWindow = true;
@@ -170,7 +171,7 @@ namespace Crikkit__Minecraft_Server_CP_
         private delegate void MyDelegate(TextBox textBox, string output);
         public void DelegateMethod(TextBox textBox, string output)
         {
-            textBox.Text += output + Environment.NewLine;
+            textBox.AppendText(output + Environment.NewLine);
         }
     }
 }

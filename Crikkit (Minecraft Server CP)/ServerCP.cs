@@ -50,7 +50,7 @@ namespace Crikkit__Minecraft_Server_CP_
         private void SendCommand(string cmd)
         {
             Server.Process.StandardInput.WriteLine(cmd);
-
+            Console.WriteLine("Input: " + cmd);
         }
     }
 }
