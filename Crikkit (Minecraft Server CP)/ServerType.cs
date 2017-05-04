@@ -8,6 +8,6 @@ namespace Crikkit__Minecraft_Server_CP_
 {
     public enum ServerType
     {
-        VANILLA, CRAFTBUKKIT, SPIGOT
+        VANILLA, CRAFTBUKKIT, SPIGOT, PAPERSPIGOT, TACOSPIGOT, GLOWSTONE
     }
 }
