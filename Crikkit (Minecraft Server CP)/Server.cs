@@ -115,8 +115,11 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             if (Process != null)
             {
-                Process.Kill();
+                Process.StandardInput.WriteLine("stop");
+                Process.WaitForExit(5000);
+                Process.Close();
                 Process = null;
+                Console.WriteLine("Server closed.");
                 return;
             }
 
@@ -150,10 +153,10 @@ namespace Crikkit__Minecraft_Server_CP_
             Process.BeginOutputReadLine();
             Process.BeginErrorReadLine();
 
-            Process.WaitForExit();
-            Console.WriteLine("Server closed.");
-            Process.Close();
-            Process = null;
+            //Process.WaitForExit();
+            //Console.WriteLine("Server closed.");
+            //Process.Close();
+            //Process = null;
         }
 
         private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
