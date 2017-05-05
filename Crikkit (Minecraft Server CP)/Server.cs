@@ -161,16 +161,17 @@ namespace Crikkit__Minecraft_Server_CP_
             if (ControlPanel != null)
             {
                 object[] data = new object[2];
-                data[0] = ControlPanel.TextBoxConsoleOutput;
+                data[0] = ControlPanel;
                 data[1] = e.Data;
                 ControlPanel.BeginInvoke(new MyDelegate(DelegateMethod), data);
             }
         }
 
-        private delegate void MyDelegate(TextBox textBox, string output);
-        public void DelegateMethod(TextBox textBox, string output)
+        private delegate void MyDelegate(ServerCP controlPanel, string output);
+        public void DelegateMethod(ServerCP controlPanel, string output)
         {
-            textBox.AppendText(output + Environment.NewLine);
+            controlPanel.TextBoxConsoleOutput.AppendText(output + Environment.NewLine);
+            controlPanel.ProcessReceived(output);
         }
     }
 }
