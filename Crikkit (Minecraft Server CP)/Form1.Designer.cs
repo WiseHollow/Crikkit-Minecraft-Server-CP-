@@ -114,6 +114,7 @@
             this.Name = "Launcher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crikkit Launcher";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Launcher_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_Settings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).EndInit();

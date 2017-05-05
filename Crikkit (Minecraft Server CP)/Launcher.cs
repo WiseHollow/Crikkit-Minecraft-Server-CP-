@@ -53,5 +53,12 @@ namespace Crikkit__Minecraft_Server_CP_
 
             ServerListView.SelectedItems.Clear();
         }
+
+        private void Launcher_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (Server s in Server.Servers)
+                if (s.IsRunning)
+                    s.KillServer();
+        }
     }
 }
