@@ -60,5 +60,32 @@ namespace Crikkit__Minecraft_Server_CP_
                 if (s.IsRunning)
                     s.KillServer();
         }
+
+        private void Launcher_Resize(object sender, EventArgs e)
+        {
+            if (FormWindowState.Minimized == this.WindowState)
+                ReduceForm();
+            else if (FormWindowState.Normal == this.WindowState)
+                RestoreForm();
+        }
+
+        private void notifyIcon_Minimize_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            RestoreForm();
+        }
+
+        private void ReduceForm()
+        {
+            notifyIcon_Minimize.Visible = true;
+            notifyIcon_Minimize.ShowBalloonTip(100);
+            this.ShowInTaskbar = false;
+        }
+
+        private void RestoreForm()
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
+            notifyIcon_Minimize.Visible = false;
+        }
     }
 }
