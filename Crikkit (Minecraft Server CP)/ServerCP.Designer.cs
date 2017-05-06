@@ -34,12 +34,12 @@
             this.ServerBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.textBox_ConsoleInput = new System.Windows.Forms.TextBox();
             this.listBox_Players = new System.Windows.Forms.ListBox();
-            this.button_KickPlayer = new System.Windows.Forms.Button();
-            this.button_BanPlayer = new System.Windows.Forms.Button();
-            this.button_Survival = new System.Windows.Forms.Button();
-            this.button_Creative = new System.Windows.Forms.Button();
+            this.imageButton_Kick = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
+            this.imageButton1 = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageButton_Kick)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,11 +60,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.panel1.Controls.Add(this.imageButton_Kick);
+            this.panel1.Controls.Add(this.imageButton1);
             this.panel1.Controls.Add(this.imageButton_NewServer);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 211);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(841, 51);
+            this.panel1.Size = new System.Drawing.Size(671, 51);
             this.panel1.TabIndex = 0;
             // 
             // textBox_ConsoleInput
@@ -85,63 +87,39 @@
             this.listBox_Players.Dock = System.Windows.Forms.DockStyle.Right;
             this.listBox_Players.ForeColor = System.Drawing.Color.White;
             this.listBox_Players.FormattingEnabled = true;
-            this.listBox_Players.Location = new System.Drawing.Point(710, 0);
+            this.listBox_Players.Location = new System.Drawing.Point(540, 0);
             this.listBox_Players.Name = "listBox_Players";
             this.listBox_Players.ScrollAlwaysVisible = true;
             this.listBox_Players.Size = new System.Drawing.Size(131, 211);
             this.listBox_Players.TabIndex = 0;
             // 
-            // button_KickPlayer
+            // imageButton_Kick
             // 
-            this.button_KickPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.button_KickPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_KickPlayer.ForeColor = System.Drawing.Color.White;
-            this.button_KickPlayer.Location = new System.Drawing.Point(562, 12);
-            this.button_KickPlayer.Name = "button_KickPlayer";
-            this.button_KickPlayer.Size = new System.Drawing.Size(131, 23);
-            this.button_KickPlayer.TabIndex = 2;
-            this.button_KickPlayer.Text = "Kick";
-            this.button_KickPlayer.UseVisualStyleBackColor = false;
-            this.button_KickPlayer.Click += new System.EventHandler(this.button_KickPlayer_Click);
+            this.imageButton_Kick.BackgroundImage = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Kick;
+            this.imageButton_Kick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageButton_Kick.ImageBase = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Kick;
+            this.imageButton_Kick.ImageHover = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Kick_Hover;
+            this.imageButton_Kick.ImagePress = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Kick_Pressed;
+            this.imageButton_Kick.Location = new System.Drawing.Point(105, 3);
+            this.imageButton_Kick.Name = "imageButton_Kick";
+            this.imageButton_Kick.Size = new System.Drawing.Size(45, 45);
+            this.imageButton_Kick.TabIndex = 5;
+            this.imageButton_Kick.TabStop = false;
+            this.imageButton_Kick.Click += new System.EventHandler(this.button_KickPlayer_Click);
             // 
-            // button_BanPlayer
+            // imageButton1
             // 
-            this.button_BanPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.button_BanPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_BanPlayer.ForeColor = System.Drawing.Color.White;
-            this.button_BanPlayer.Location = new System.Drawing.Point(562, 41);
-            this.button_BanPlayer.Name = "button_BanPlayer";
-            this.button_BanPlayer.Size = new System.Drawing.Size(131, 23);
-            this.button_BanPlayer.TabIndex = 3;
-            this.button_BanPlayer.Text = "Ban";
-            this.button_BanPlayer.UseVisualStyleBackColor = false;
-            this.button_BanPlayer.Click += new System.EventHandler(this.button_BanPlayer_Click);
-            // 
-            // button_Survival
-            // 
-            this.button_Survival.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.button_Survival.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Survival.ForeColor = System.Drawing.Color.White;
-            this.button_Survival.Location = new System.Drawing.Point(562, 70);
-            this.button_Survival.Name = "button_Survival";
-            this.button_Survival.Size = new System.Drawing.Size(131, 23);
-            this.button_Survival.TabIndex = 4;
-            this.button_Survival.Text = "Survival";
-            this.button_Survival.UseVisualStyleBackColor = false;
-            this.button_Survival.Click += new System.EventHandler(this.button_Survival_Click);
-            // 
-            // button_Creative
-            // 
-            this.button_Creative.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.button_Creative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Creative.ForeColor = System.Drawing.Color.White;
-            this.button_Creative.Location = new System.Drawing.Point(562, 99);
-            this.button_Creative.Name = "button_Creative";
-            this.button_Creative.Size = new System.Drawing.Size(131, 23);
-            this.button_Creative.TabIndex = 5;
-            this.button_Creative.Text = "Creative";
-            this.button_Creative.UseVisualStyleBackColor = false;
-            this.button_Creative.Click += new System.EventHandler(this.button_Creative_Click);
+            this.imageButton1.BackgroundImage = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Ban;
+            this.imageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageButton1.ImageBase = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Ban;
+            this.imageButton1.ImageHover = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Ban_Hover;
+            this.imageButton1.ImagePress = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Ban_Pressed;
+            this.imageButton1.Location = new System.Drawing.Point(54, 3);
+            this.imageButton1.Name = "imageButton1";
+            this.imageButton1.Size = new System.Drawing.Size(45, 45);
+            this.imageButton1.TabIndex = 4;
+            this.imageButton1.TabStop = false;
+            this.imageButton1.Click += new System.EventHandler(this.button_BanPlayer_Click);
             // 
             // imageButton_NewServer
             // 
@@ -163,11 +141,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(841, 262);
-            this.Controls.Add(this.button_Creative);
-            this.Controls.Add(this.button_Survival);
-            this.Controls.Add(this.button_BanPlayer);
-            this.Controls.Add(this.button_KickPlayer);
+            this.ClientSize = new System.Drawing.Size(671, 262);
             this.Controls.Add(this.listBox_Players);
             this.Controls.Add(this.textBox_ConsoleInput);
             this.Controls.Add(this.panel1);
@@ -178,6 +152,8 @@
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ServerCP_FormClosed);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageButton_Kick)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,10 +166,8 @@
         public System.Windows.Forms.TextBox TextBoxConsoleOutput;
         private System.ComponentModel.BackgroundWorker ServerBackgroundWorker;
         private System.Windows.Forms.TextBox textBox_ConsoleInput;
-        private System.Windows.Forms.Button button_KickPlayer;
         public System.Windows.Forms.ListBox listBox_Players;
-        private System.Windows.Forms.Button button_BanPlayer;
-        private System.Windows.Forms.Button button_Survival;
-        private System.Windows.Forms.Button button_Creative;
+        private ImageButton imageButton1;
+        private ImageButton imageButton_Kick;
     }
 }

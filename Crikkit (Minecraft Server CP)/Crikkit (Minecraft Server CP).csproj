@@ -142,6 +142,24 @@
   <ItemGroup>
     <None Include="Resources\Button_Power_Pressed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Ban.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Kick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Kick_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Kick_Pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Ban_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Ban_Pressed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
