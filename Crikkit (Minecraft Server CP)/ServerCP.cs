@@ -57,7 +57,38 @@ namespace Crikkit__Minecraft_Server_CP_
 
         private void button_KickPlayer_Click(object sender, EventArgs e)
         {
+            if (listBox_Players.SelectedIndex >= 0)
+            {
+                SendCommand("kick " + listBox_Players.Items[listBox_Players.SelectedIndex]);
+                listBox_Players.SelectedIndex = -1;
+            }
+        }
 
+        private void button_BanPlayer_Click(object sender, EventArgs e)
+        {
+            if (listBox_Players.SelectedIndex >= 0)
+            {
+                SendCommand("ban " + listBox_Players.Items[listBox_Players.SelectedIndex]);
+                listBox_Players.SelectedIndex = -1;
+            }
+        }
+
+        private void button_Survival_Click(object sender, EventArgs e)
+        {
+            if (listBox_Players.SelectedIndex >= 0)
+            {
+                SendCommand("gamemode 0 " + listBox_Players.Items[listBox_Players.SelectedIndex]);
+                listBox_Players.SelectedIndex = -1;
+            }
+        }
+
+        private void button_Creative_Click(object sender, EventArgs e)
+        {
+            if (listBox_Players.SelectedIndex >= 0)
+            {
+                SendCommand("gamemode 1 " + listBox_Players.Items[listBox_Players.SelectedIndex]);
+                listBox_Players.SelectedIndex = -1;
+            }
         }
     }
 }

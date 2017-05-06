@@ -35,6 +35,9 @@
             this.textBox_ConsoleInput = new System.Windows.Forms.TextBox();
             this.listBox_Players = new System.Windows.Forms.ListBox();
             this.button_KickPlayer = new System.Windows.Forms.Button();
+            this.button_BanPlayer = new System.Windows.Forms.Button();
+            this.button_Survival = new System.Windows.Forms.Button();
+            this.button_Creative = new System.Windows.Forms.Button();
             this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).BeginInit();
@@ -99,6 +102,46 @@
             this.button_KickPlayer.TabIndex = 2;
             this.button_KickPlayer.Text = "Kick";
             this.button_KickPlayer.UseVisualStyleBackColor = false;
+            this.button_KickPlayer.Click += new System.EventHandler(this.button_KickPlayer_Click);
+            // 
+            // button_BanPlayer
+            // 
+            this.button_BanPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.button_BanPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_BanPlayer.ForeColor = System.Drawing.Color.White;
+            this.button_BanPlayer.Location = new System.Drawing.Point(562, 41);
+            this.button_BanPlayer.Name = "button_BanPlayer";
+            this.button_BanPlayer.Size = new System.Drawing.Size(131, 23);
+            this.button_BanPlayer.TabIndex = 3;
+            this.button_BanPlayer.Text = "Ban";
+            this.button_BanPlayer.UseVisualStyleBackColor = false;
+            this.button_BanPlayer.Click += new System.EventHandler(this.button_BanPlayer_Click);
+            // 
+            // button_Survival
+            // 
+            this.button_Survival.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.button_Survival.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Survival.ForeColor = System.Drawing.Color.White;
+            this.button_Survival.Location = new System.Drawing.Point(562, 70);
+            this.button_Survival.Name = "button_Survival";
+            this.button_Survival.Size = new System.Drawing.Size(131, 23);
+            this.button_Survival.TabIndex = 4;
+            this.button_Survival.Text = "Survival";
+            this.button_Survival.UseVisualStyleBackColor = false;
+            this.button_Survival.Click += new System.EventHandler(this.button_Survival_Click);
+            // 
+            // button_Creative
+            // 
+            this.button_Creative.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.button_Creative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Creative.ForeColor = System.Drawing.Color.White;
+            this.button_Creative.Location = new System.Drawing.Point(562, 99);
+            this.button_Creative.Name = "button_Creative";
+            this.button_Creative.Size = new System.Drawing.Size(131, 23);
+            this.button_Creative.TabIndex = 5;
+            this.button_Creative.Text = "Creative";
+            this.button_Creative.UseVisualStyleBackColor = false;
+            this.button_Creative.Click += new System.EventHandler(this.button_Creative_Click);
             // 
             // imageButton_NewServer
             // 
@@ -121,6 +164,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(841, 262);
+            this.Controls.Add(this.button_Creative);
+            this.Controls.Add(this.button_Survival);
+            this.Controls.Add(this.button_BanPlayer);
             this.Controls.Add(this.button_KickPlayer);
             this.Controls.Add(this.listBox_Players);
             this.Controls.Add(this.textBox_ConsoleInput);
@@ -146,5 +192,8 @@
         private System.Windows.Forms.TextBox textBox_ConsoleInput;
         private System.Windows.Forms.Button button_KickPlayer;
         public System.Windows.Forms.ListBox listBox_Players;
+        private System.Windows.Forms.Button button_BanPlayer;
+        private System.Windows.Forms.Button button_Survival;
+        private System.Windows.Forms.Button button_Creative;
     }
 }
