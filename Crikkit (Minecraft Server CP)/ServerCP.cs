@@ -54,5 +54,15 @@ namespace Crikkit__Minecraft_Server_CP_
             Server.Process.StandardInput.WriteLine(cmd);
             Console.WriteLine("Input: " + cmd);
         }
+
+        private void button_KickPlayer_Click(object sender, EventArgs e)
+        {
+            int index = listBox_Players.SelectedIndex;
+            if (index >= 0)
+            {
+                Server.Process.StandardInput.WriteLine("kick " + listBox_Players.Items[index]);
+                listBox_Players.SelectedIndex = -1;
+            }
+        }
     }
 }

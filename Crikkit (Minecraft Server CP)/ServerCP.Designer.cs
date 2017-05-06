@@ -35,8 +35,8 @@
             this.textBox_ConsoleInput = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listBox_Players = new System.Windows.Forms.ListBox();
-            this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.button_KickPlayer = new System.Windows.Forms.Button();
+            this.imageButton_NewServer = new Crikkit__Minecraft_Server_CP_.ImageButton(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageButton_NewServer)).BeginInit();
@@ -98,6 +98,19 @@
             this.listBox_Players.Size = new System.Drawing.Size(131, 171);
             this.listBox_Players.TabIndex = 0;
             // 
+            // button_KickPlayer
+            // 
+            this.button_KickPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.button_KickPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_KickPlayer.ForeColor = System.Drawing.Color.White;
+            this.button_KickPlayer.Location = new System.Drawing.Point(168, 182);
+            this.button_KickPlayer.Name = "button_KickPlayer";
+            this.button_KickPlayer.Size = new System.Drawing.Size(131, 23);
+            this.button_KickPlayer.TabIndex = 2;
+            this.button_KickPlayer.Text = "Kick";
+            this.button_KickPlayer.UseVisualStyleBackColor = false;
+            this.button_KickPlayer.Click += new System.EventHandler(this.button_KickPlayer_Click);
+            // 
             // imageButton_NewServer
             // 
             this.imageButton_NewServer.BackgroundImage = global::Crikkit__Minecraft_Server_CP_.Properties.Resources.Button_Power;
@@ -111,18 +124,6 @@
             this.imageButton_NewServer.TabIndex = 3;
             this.imageButton_NewServer.TabStop = false;
             this.imageButton_NewServer.Click += new System.EventHandler(this.imageButton_NewServer_Click);
-            // 
-            // button_KickPlayer
-            // 
-            this.button_KickPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.button_KickPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_KickPlayer.ForeColor = System.Drawing.Color.White;
-            this.button_KickPlayer.Location = new System.Drawing.Point(168, 182);
-            this.button_KickPlayer.Name = "button_KickPlayer";
-            this.button_KickPlayer.Size = new System.Drawing.Size(131, 23);
-            this.button_KickPlayer.TabIndex = 2;
-            this.button_KickPlayer.Text = "Kick";
-            this.button_KickPlayer.UseVisualStyleBackColor = false;
             // 
             // ServerCP
             // 
