@@ -54,23 +54,5 @@ namespace Crikkit__Minecraft_Server_CP_
             Server.Process.StandardInput.WriteLine(cmd);
             Console.WriteLine("Input: " + cmd);
         }
-
-        public void ProcessReceived(string data)
-        {
-            if (data == null)
-                return;
-            data = data.ToLower();
-            try
-            {
-                Regex TestRegex = new Regex(@"[0-9\-]{10}\ ([0-9:]{8})\ \[INFO\]\ ([^\ ]*)\ (lost\ connection)");
-                if (TestRegex.IsMatch(data))
-                {
-                    //string[] Matches = TestRegex.Split(Data);
-                }
-            }
-            catch
-            {
-            }
-        }
     }
 }

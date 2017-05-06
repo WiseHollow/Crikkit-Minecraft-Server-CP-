@@ -19,3 +19,4 @@ E:\Full Sail University\Projects\Crikkit-Minecraft-Server-CP-\Crikkit (Minecraft
 E:\Full Sail University\Projects\Crikkit-Minecraft-Server-CP-\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit__Minecraft_Server_CP_.Properties.Resources.resources
 E:\Full Sail University\Projects\Crikkit-Minecraft-Server-CP-\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit__Minecraft_Server_CP_.ServerCP.resources
 E:\Full Sail University\Projects\Crikkit-Minecraft-Server-CP-\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit (Minecraft Server CP).csproj.GenerateResource.Cache
+E:\Visual Studio 2015\Projects\Crikkit (Minecraft Server CP)\Crikkit (Minecraft Server CP)\obj\Debug\Crikkit (Minecraft Server CP).csprojResolveAssemblyReference.cache

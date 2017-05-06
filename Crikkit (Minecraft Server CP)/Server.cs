@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Crikkit__Minecraft_Server_CP_
@@ -56,6 +57,11 @@ namespace Crikkit__Minecraft_Server_CP_
         public Process Process;
         public int ID;
         private ServerType type;
+        private uint memory;
+        private ServerCP controlPanel;
+
+        private List<string> Players;
+
         public ServerType Type
         {
             get { return type; }
@@ -65,7 +71,6 @@ namespace Crikkit__Minecraft_Server_CP_
         {
             get;set;
         }
-        private uint memory;
         public uint Memory
         {
             get { return memory; }
@@ -77,14 +82,11 @@ namespace Crikkit__Minecraft_Server_CP_
                     memory = value;
             }
         }
-
-        private ServerCP controlPanel;
         public ServerCP ControlPanel
         {
             get { return controlPanel; }
             set { controlPanel = value; }
         }
-
         public bool IsRunning
         {
             get
@@ -100,6 +102,7 @@ namespace Crikkit__Minecraft_Server_CP_
             Name = name;
             Memory = memory;
             Type = type;
+            Players = new List<string>();
         }
 
         public string GetWorkingDirectory()
@@ -169,6 +172,8 @@ namespace Crikkit__Minecraft_Server_CP_
 
         private void Process_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
+            try { ProcessReceived(e.Data); }
+            catch { }
             if (ControlPanel != null)
             {
                 object[] data = new object[2];
@@ -182,7 +187,107 @@ namespace Crikkit__Minecraft_Server_CP_
         public void DelegateMethod(ServerCP controlPanel, string output)
         {
             controlPanel.TextBoxConsoleOutput.AppendText(output + Environment.NewLine);
-            controlPanel.ProcessReceived(output);
         }
+
+        private delegate void PlayerJoinDelegate(string player);
+        private delegate void PlayerQuitDelegate(string player);
+        public void PlayerJoin(string player)
+        {
+            ControlPanel.listBox_Players.Items.Add(player);
+        }
+        public void PlayerQuit(string player)
+        {
+            ControlPanel.listBox_Players.Items.Remove(player);
+        }
+
+        public void ProcessReceived(string data) 
+        {
+            if (data == null)
+                return;
+
+            ServerMessage sm = new ServerMessage(data);
+
+            if (sm.GetType() == ServerMessageType.JOIN)
+            {
+                Console.WriteLine("Join: " + sm.GetPlayer());
+                Players.Add(sm.GetPlayer());
+                if (ControlPanel != null)
+                {
+                    object[] capsule = new object[1];
+                    capsule[0] = sm.GetPlayer();
+                    ControlPanel.BeginInvoke(new PlayerJoinDelegate(PlayerJoin), capsule);
+                }
+            }
+            else if (sm.GetType() == ServerMessageType.QUIT)
+            {
+                Console.WriteLine("Quit: " + sm.GetPlayer());
+                Players.Remove(sm.GetPlayer());
+                if (ControlPanel != null)
+                {
+                    object[] capsule = new object[1];
+                    capsule[0] = sm.GetPlayer();
+                    ControlPanel.BeginInvoke(new PlayerQuitDelegate(PlayerQuit), capsule);
+                }
+            }
+        }
+    }
+
+    class ServerMessage
+    {
+        private string Raw;
+        private string Message;
+        private ServerMessageType Type;
+        private string Player;
+
+        public ServerMessage(string raw)
+        {
+            Raw = raw;
+            Message = Raw.Substring(17);
+            Type = CalculateType();
+            Player = GeneratePlayer();
+        }
+
+        private string GetMessage()
+        {
+            return Message;
+        }
+
+        public new ServerMessageType GetType()
+        {
+            return Type;
+        }
+
+        public string GetPlayer()
+        {
+            return Player;
+        }
+
+        private ServerMessageType CalculateType()
+        {
+            int firstSpace = Message.IndexOf(' ') + 1;
+            string proceedingMessage = Message.Substring(firstSpace);
+
+            if (proceedingMessage.StartsWith("logged in with entity id"))
+                return ServerMessageType.JOIN;
+            else if (proceedingMessage.StartsWith("lost connection:"))
+                return ServerMessageType.QUIT;
+
+            return ServerMessageType.NONE;
+        }
+
+        private string GeneratePlayer()
+        {
+            if (Type == ServerMessageType.JOIN)
+                return Message.Split(new String[1] { " " }, StringSplitOptions.None)[0].Substring(0, Message.IndexOf('['));
+            else if (Type == ServerMessageType.QUIT)
+                return Message.Split(new String[1] { " " }, StringSplitOptions.None)[0];
+
+            return "null";
+        }
+    }
+
+    enum ServerMessageType
+    {
+        NONE, JOIN, QUIT
     }
 }
