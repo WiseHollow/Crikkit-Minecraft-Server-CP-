@@ -22,7 +22,7 @@ namespace Crikkit__Minecraft_Server_CP_
 
         public static int CreateNewServer(string name, uint memory, ServerType type)
         {
-            Server server = new Server(name, memory, type);
+            Server server = new Server(0, name, memory, type);
             Servers.Add(server);
             Console.WriteLine("Server has been created with ID: " + server.ID);
             server.SaveConfiguration();
@@ -50,12 +50,13 @@ namespace Crikkit__Minecraft_Server_CP_
                 int.TryParse(reader.ReadLine(), out memory);
                 ServerType type = (ServerType) Enum.Parse(typeof(ServerType), reader.ReadLine());
 
-                Servers.Add(new Server(name, (uint) memory, type));
+                Servers.Add(new Server(0, name, (uint) memory, type));
             }
         }
 
         public Process Process;
         public int ID;
+        public int IconID;
         private ServerType type;
         private uint memory;
         private ServerCP controlPanel;
@@ -95,8 +96,9 @@ namespace Crikkit__Minecraft_Server_CP_
             }
         }
 
-        private Server(string name, uint memory, ServerType type)
+        private Server(int iconID, string name, uint memory, ServerType type)
         {
+            IconID = iconID;
             ID = Servers.Count;
             Process = null;
             Name = name;
